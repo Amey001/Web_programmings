@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment No. 5</title>
+</head>
+<body>
+   <table border="2" size="30px" cellpadding="10px" cellspacing="0px">
+    <tbody bgcolor="pink">
+        <tr>
+            <th align="left">Name</th>
+            <td><input type="text" name="ename" id="ename"></td>
+        </tr>
+
+        <tr>
+            <th align="left">Employee code</th>
+            <td><input type="text" name="ecode" id="ecode" size="5px"></td>
+        </tr>
+
+        <tr>
+            <th align="left">Department</th>
+            <td><input type="radio" name="dept" id="dept" value="ADMIN">ADMIN<br/>
+            <input type="radio" name="dept" id="dept" value="HR">HR<br/>
+            <input type="radio" name="dept" id="dept" value="TECHNICAL">TECHNICAL<br/>
+            <input type="radio" name="dept" id="dept" value="ACCOUNTS">ACCOUNTS<br/>
+        </td>
+        </tr>
+
+        <tr>
+            <th align="left">Date of Joining</th>
+            <td>
+                <input type="text" size="1">/
+                <input type="text" size="1">/
+                <input type="text" size="1"><br/>
+                &nbsp;&nbsp;dd &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yyyy
+            </td>
+        </tr>
+
+        <tr>
+            <th align="left">Address</th>
+            <td><textarea name="address" id="address" cols="30" rows="5"></textarea></td>
+        </tr>
+
+        <tr>
+            <th align="left">Training programs Attended</th>
+            <td><input type="checkbox" name="program" id="program" value="HTML/DHTML">HTML/DHTML<br>
+                <input type="checkbox" name="program" id="program" value="JAVA">JAVA<br>
+                <input type="checkbox" name="program" id="program" value="CLIENT/SERVER">CLIENT/SERVER<br>
+                <input type="checkbox" name="program" id="program" value=".NET">.NET<br>
+            </td>
+        </tr>
+
+        <tr>
+            <th align="left">Training Programs need to attend</th>
+            <td><select name="subject" id="subject" size="2" multiple>
+                <option value="JAVASCRIPT" selected>JAVASCRIPT</option>
+                <option value="JSTRUCT" selected>JSTRUCT</option>
+                <option value="REACT">REACT</option>
+                <option value="JAVA">JAVA</option>
+            </select></td>
+        </tr>
+
+        <tr>
+            <th align="left">Send the information at</th>
+            <td><a href="mailto:empinfo@iacsd.com">empinfo@iacsd.com</a></td>
+        </tr>
+    </tbody>
+   </table> <br>
+
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <button type="submit" >Submit</button>
+</body>
+</html>
