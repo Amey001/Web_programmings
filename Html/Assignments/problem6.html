@@ -6,9 +6,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <div class="main" style="border: 3px solid black;">
-    <h1>Internet Usage Survey</h1>
+<body style="overflow-x: hidden;">
+    <div class="main" style="border: 3px solid black; padding-left: 10px; height: 100vh;">
+    <h3>Internet Usage Survey</h3>
+    <p>
+        This Survey is being conducted to help identify the Internet Usage pattern of our Customers. <br/>
+        Please take a few moments to complete and submit this short form.Thank You for your cooperation. 
+    </p>
+    <table>
+        
+        <tr>
+            <th align="left">What type of Internet Connection you have? <br> (Select One)</th>
+            <td >
+                <select name="" id="" size="4" multiple>
+                <option value="Dial-up" name="Dial-up" >Dial-up</option>
+                <option value="DSL" name="DSL">DSL</option>
+                <option value="HIGH SPEED CABLE" name="HIGH SPEED CABLE">HIGH SPEED CABLE</option>
+                <option value="Other" name="Other" >Other</option>
+                </select>
+            </td>
+        </tr>  
+        <tr>
+            <th align="left">What type of computers do you use most at home?</th>
+            <td>
+                <input type="radio" name="pc" id="desktop" value="desktop">desktop
+                <input type="radio" name="pc" id="laptop" value="laptop">laptop
+            </td>
+        </tr>
+        <tr>
+            <th align="left">How will you describe your main reason for using the internet?</th>
+            <td>
+                <input type="radio" name="pc" id="desktop" value="desktop">To do Work related activities <br>
+                <input type="radio" name="pc" id="desktop" value="desktop">To do School related Activities <br>
+                <input type="radio" name="pc" id="desktop" value="desktop">For entertainment purposes <br>
+                <input type="radio" name="pc" id="desktop" value="desktop">Other Activities <br> 
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <fieldset style="width: 550px; height: 185px">
+                    <legend>Types of site visited</legend> <br>
+                    What type of Web sites do you watch most Often? <br>
+                    Check for all Activity. <br>
+                    <input type="checkbox" name="" id="">Self Improvement <br>
+                    <input type="checkbox" name="" id="">Entertainment <br>
+                    <input type="checkbox" name="" id="">News And Sports<br>
+                    <input type="checkbox" name="" id="">Reference<br>
+                    <input type="checkbox" name="" id="">Email<br>
+                 </fieldset>
+            </td>
+            <td>
+                <fieldset style="width: 550px; height: 185px;">
+                    <legend>Time Spend using Internet</legend><br><br>
+                    During an average week.how long do you spend online? <br>
+                    <input type="radio" name="week" id="0-3 Hours">0-3 Hours<br>
+                    <input type="radio" name="week" id="4-6 Hours">4-6 Hours<br>
+                    <input type="radio" name="week" id="7-10 Hours">7-10 Hours<br>
+                    <input type="radio" name="week" id="11-14 Hours">11-14 Hours<br>
+                    <input type="radio" name="week" id="15+ Hours">15+ Hours<br>
+                </fieldset>
+            </td>
+        </tr>   
+    </table><br>
+    Please comment on your opinion concerning Internet privacy and Safety <br>
+    <textarea name="" id="" cols="99" rows="4"></textarea>
+    <br>
+    <table>
+        <tr>
+            <td> First Name :
+                <input type="text" style="width: 350px;">
+            </td>
+            <td>
+                Last Name :
+                <input type="text" style="width: 350px; ">
+            </td>
+        </tr>
+    </table>
     </div>
 </body>
 </html>
