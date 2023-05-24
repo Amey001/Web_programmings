@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sports Website Feedback Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    
+    h1 {
+      text-align: center;
+    }
+    
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    
+    .required {
+      color: red;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+    
+    select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+    
+    textarea {
+      height: 100px;
+    }
+    
+    .checkbox-label {
+      font-weight: normal;
+    }
+    
+    .submit-btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    .submit-btn:hover {
+      background-color: #45a049;
+    }
+    #p1{
+       text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Feedback Form</h1>
+  
+  <p id="p1">Please provide your feedback below:</p>
+  
+  <form action="submit_feedback.php" method="POST">
+    <label for="problem_type">Type of Problem<span class="required">*</span>:</label>
+    <select id="problem_type" name="problem_type" required>
+      <option value="">-- Select Problem Type --</option>
+      <option value="technical">Technical (e.g., website is down)</option>
+      <option value="product_not_available">Product Not Available</option>
+      <option value="missing_information">Missing Information about the Product</option>
+    </select>
+    
+    <label for="username">Username<span class="required">*</span>:</label>
+    <input type="text" id="username" name="username" required>
+    
+    <label for="email">Email<span class="required">*</span>:</label>
+    <input type="email" id="email" name="email" required>
+    
+    <label for="location">Location<span class="required">*</span>:</label>
+    <input type="text" id="location" name="location" required>
+    
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" name="phone">
+    
+    <label for="problem_description">Description of the Problem<span class="required">*</span>:</label>
+    <textarea id="problem_description" name="problem_description" rows="4" cols="40" required></textarea>
+    
+    <label class="checkbox-label">
+      <input type="checkbox" id="notification" name="notification">
+      Notification of Problem Solved
+    </label>
+    
+    <input type="submit" value="Submit" class="submit-btn">
+  </form>
+</body>
+</html>
