@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        cnt=0
+        function addnewtextbox()
+        {
+            var txtbox=document.createElement("input");
+            txtbox.setAttribute("type","text");
+            txtbox.setAttribute("name","nm"+cnt);
+            txtbox.setAttribute("id","nm"+cnt);
+            cnt++;
+            var dv=document.getElementById("mydiv")
+            dv.appendChild(txtbox);
+        }
+        function assignevent()
+        {
+            document.getElementById("add").addEventListener("click",addnewtextbox)
+        }
+        function showdetails()
+        {
+            document.getElementById("add").removeEventListener("click",addnewtextbox)
+            var str=document.getElementById("nm").value
+            for(var i=0;i<cnt;i++)
+            {
+                str+=","+document.getElementById("nm"+i).value
+            }
+            document.getElementById("display").innerHTML=str;
+            
+
+        }
+
+
+    </script>
+</head>
+<body onload="assignevent()">
+    <div id="mydiv">
+    <input type="text" name="nm" id="nm">
+    <button type="button" id="add" name="btn" value="add"> Add new</button>
+    <button type="button" id="show" name="btn" value="show" onclick="showdetails()"> Show details</button>
+
+</div>
+<div id="display">
+
+</div>
+</body>
+</html>

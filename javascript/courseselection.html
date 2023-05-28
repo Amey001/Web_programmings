@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+         
+        div{
+            border: 3px solid black;
+            height: 150px;
+            width: 300px;
+            padding: 20px;
+            
+        }
+        #lastdata{
+            border:2px solid rgb(57, 10, 10);
+        }
+        
+        .myclass2{
+            display: none
+        }
+        .myc{
+            display:block
+        }
+
+
+    </style>
+    <script>
+        
+        function validate(id,errmsg)
+        {
+            var a=document.getElementById(id).value
+            if((a!=="") && (a.trim().length>0))
+            {
+                document.getElementById(errmsg).innerHTML=""
+                return true;
+            }
+            document.getElementById(errmsg).innerHTML=" not found"
+            return false;
+        }
+      function showCourses(){
+            var flag=validate("name","namemesg")   //actual parameters
+            var flag1=validate("addr","addmesg")
+
+    if(flag && flag1){
+        if(document.getElementById("show").checked)
+        {
+             document.getElementById("mydiv2").classList.add("myc");
+             document.getElementById("mydiv2").classList.remove("myclass2");
+             document.getElementById("btn").addEventListener("click",displaydata)
+
+        }
+        else{
+            document.getElementById("show").checked=false;
+        }
+        }
+
+      }
+
+      var displaydata=()=>{
+        var arr=document.getElementsByName("course")
+        for(var ob of arr)
+        {
+            if(ob.checked)
+            {
+                var crc=ob.value
+                var nm=document.getElementById("name").value               
+                var addr=document.getElementById("addr").value
+                str=`Name :: ${nm} <br> Address :: ${addr} <br> selected course name :: ${crc}`
+                document.getElementById("lastdata").innerHTML=str;
+                break;    
+            }
+        }
+      }
+
+    </script>
+</head>
+<body>
+    <div>
+        <form>
+            Name<input type="text" name="name" id="name" >
+            <span id="namemesg"></span><br><br>
+            Adddress<input type="text" name="addr" id="addr"> <span id="addmesg"></span><br><br>
+            <input type="checkbox" name="show " id="show" value="show" onclick="showCourses()"><label for="show">show Courses</label><br><br>
+
+        </form>
+    </div> <br><br>
+    <div id="mydiv2" class="myclass2">
+        <form>
+            <input type="radio" name="course" id="java" value="java"><label for="java"> Java</label><br>
+            <input type="radio" name="course" id="DBMS" value="DBMS"><label for="DBMS">Dbms</label><br>
+            <button type="button" name="btn" id="btn" value="btn">showselected</button>
+
+        </form>
+    </div>
+    <div id="lastdata">
+
+    </div>
+   
+</body>
+</html>

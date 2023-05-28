@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #frm{
+            border: 2px solid black;
+            height: 150px;
+            width: 300px;
+            margin-left: 30%;
+            padding: 30px;
+        }
+
+        
+    </style>
+    <script>
+        arr=[{pid:1,pname:'chair',qty:34,price:3450},
+        {pid:2,pname:'table',qty:35,price:3100},
+        {pid:3,pname:'shelf',qty:30,price:3355},
+        {pid:4,pname:'stool',qty:10,price:3222}
+    ]
+    var clearform=()=>
+            {
+                document.getElementById("pid").value=""
+                document.getElementById("pname").value=""
+                document.getElementById("qty").value=""
+                document.getElementById("price").value=""
+            }
+
+        function displaytable( a=arr)
+        {
+            str="<table border='2'> <tr><th>Product id</th> <th>Product name</th>  <th> Product qty</th> <th>Product price</th> </tr>"
+
+                for(var ob of a)
+                {
+                    str+=`<tr><td> ${ob.pid} </td> <td>${ob.pname}</td><td>${ob.qty}</td> <td>${ob.price}</td></tr>`
+
+                }
+                str+="</table>"
+
+            document.getElementById("mydiv").innerHTML=str;
+        }
+        var addnewproduct=()=>{
+
+            var pid=parseInt(document.getElementById("pid").value);
+            var pname=document.getElementById("pname").value;
+            var qty=parseInt(document.getElementById("qty").value);
+            var price=parseFloat(document.getElementById("price").value);
+            var ob={pid:pid,pname:pname,qty:qty,price:price}
+            arr.push(ob);
+            displaytable()
+            document.getElementById("pid").focus();
+        }
+        var deleteproduct=()=>{
+            var pid=parseInt(document.getElementById("pid").value);
+            var pos=arr.findIndex(a=>a.pid===pid);
+            if(pos!=-1)
+            {
+                ans=confirm(`do you really want to delete ${pid} (y/n)`)
+                if(ans)
+                {
+                    arr.splice(pos,1);
+                    displaytable();
+         
+                }
+                   }
+            else{
+                document.getElementById("mydiv").innerHTML="not found";
+            }
+            
+                    
+        }
+        var updateproduct=()=>{
+            pid=parseInt(document.getElementById("pid").value)
+            pos=arr.findIndex(a=>a.pid===pid)
+
+            if(pos!=-1)
+            {
+                var newnm=prompt("enter new name : ")
+                var newqty=parseInt(prompt("enter new quantity :: "))
+                var newprice=parseFloat(prompt("enter new price :: "))
+                
+                
+                arr[pos].pname=newnm
+                arr[pos].qty=newqty
+                arr[pos].price=newprice 
+                displaytable()
+            }
+           
+           
+        }
+        clearform()
+        document.getElementById("pid").focus()
+
+        function searchitem(event){
+            console.log(event.key)          //returns name
+            console.log(event.which)        //returns ascii value
+            if(event.which==13)
+            {
+                var searchtext=document.getElementById("search").value
+                //using filter and checking whether the character is present in the array and then display
+                var arr2=arr.filter(a=>a.pname.includes(searchtext))
+                //the matching is stored in arr1 and displaying the arr2
+                displaytable(arr2) 
+            }
+
+        }
+
+
+
+    </script>
+</head>
+<body onload="displaytable()">
+    <form id="frm">
+        ProductId : <input type="text" id="pid" name="pid"><br>
+        Product Name : <input type="text" id="pname" name="pname"><br>
+        Product quantity : <input type="text" id="qty" name="qty"><br>
+        Product price : <input type="text" id="price" name="price"><br>
+        <button type="button" id="btn" name="add" value="add" onclick="addnewproduct()"> Add new Product</button>
+        <button type="button" id="delete" name="" value="delete" onclick="deleteproduct()"> delete Product</button>
+        <button type="button" id="btn" name="update" value="update" onclick="updateproduct()"> update Product</button>
+
+    </form>
+    Search : <input type="text" name="search" id="search" onkeydown="searchitem(event)">  
+    <div id="mydiv">
+
+    </div>
+    
+</body>
+</html>
