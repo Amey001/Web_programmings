@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="./jquery.js"></script>
+    <script>
+        $(document).ready(function()
+        {
+            $("#btn").click(function()
+            {
+            //document.getElementById("n1").value---->$("#n1").val()
+            var a=parseInt(jQuery("#num1").val())
+            
+            var b=parseInt(jQuery("#num2").val())
+            var ans=a+b;
+            alert(ans);
+           
+            $("#result").val(ans)
+            $('#mydiv').html(ans)
+            })
+            
+            
+        })
+    </script>
+
+</head>
+<body>
+  <form>
+    Number1 : <input type="text" id="num1" name="num1" >
+    Number2 : <input type="text" id="num2" name="num2" >
+    result : <input type="text" id="result" name="result" readonly>
+    <button type="button" name="btn" id="btn" value="btn">Addition</button>
+</form>
+<div id="mydiv">
+
+</div>
+</body>
+</html>
