@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import Myheader from './Myheader';
-import Classcomponents from "./Classcomponents"
+import Myheader from './components/Myheader';
+import Classcomponents from "./components/Classcomponents"
 
 
 function App() {
