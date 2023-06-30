@@ -33,9 +33,9 @@
 
         function sendData(){
             var name=document.getElementById('nm').value;
-            var month=document.getElementById('mm').value;
-            var day=document.getElementById('dd').value;
-            var year=document.getElementById('yyyy').value;
+            // var month=document.getElementById('mm').value;
+            // var day=document.getElementById('dd').value;
+            // var year=document.getElementById('yyyy').value;
             var mail=document.getElementById('email').value;
             var gender=document.getElementsByName('gender');
 
@@ -92,6 +92,7 @@
                 return false;
             }
         }
+
         function validateGender(gender){
             for(var i=0;i<gender.length;i++){
                 if(gender[i].checked){
@@ -103,6 +104,7 @@
                 }
             }
         }
+
         function validateMail(mail){
             var pattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if(pattern.test(mail)){
@@ -113,40 +115,27 @@
                 return false;
             }
         }
-        function validateFood(food){
-            var isChecked=false;
-            for(var j=0; j<food.length; j++){
-                if(food[j].checked){
-                    isChecked=true;
-                    break;
-                }
-            }
-            if(isChecked){
-                document.getElementById('err6').innerHTML="";
-                return true;
-            }else{
-                document.getElementById('err6').innerHTML="Select at least one";
-                return false;
-            }
-        }
-        function validateDate(year, month, day) {
-        var selectedMonth = document.getElementById('mm').selectedIndex;
-        var selectedDay = document.getElementById('dd').selectedIndex;
-        var selectedYear = document.getElementById('yyyy').selectedIndex;
-
-        if (selectedMonth === 0 || selectedDay === 0 || selectedYear === 0) {
-            document.getElementById('err2').innerHTML = 'Select a valid date';
-            return false;
-        } else {
-        document.getElementById('err2').innerHTML = '';
-        return true;
-        }
-    }
-
+        // function validateFood(food){
+        //     var isChecked=false;
+        //     for(var j=0; j<food.length; j++){
+        //         if(food[j].checked){
+        //             isChecked=true;
+        //             break;
+        //         }
+        //     }
+        //     if(isChecked){
+        //         document.getElementById('err6').innerHTML="";
+        //         return true;
+        //     }else{
+        //         document.getElementById('err6').innerHTML="Select at least one";
+        //         return false;
+        //     }
+        // }
+6
     </script>
     </head>
     <body>
-        <table border="2">
+        <table border="4">
             <tr>
                 <td>Name</td>
                 <td><input type="text" name="nm" id="nm"></td>

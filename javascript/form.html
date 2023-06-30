@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            color: red;
+        }
+        
+    </style>
+    <script>
+        function validateName(name){
+            
+            if(name==="" || (name.trim().length ===0) && isNaN(name))
+            {
+                document.getElementById("err1").innerHTML="blank not allowed "
+                return false;
+            }
+            else{
+                document.getElementById("err1").innerHTML="";
+ 
+                return true;
+            }
+        }
+        function validateGender(arr)
+        {
+            
+            for(var i=0;i<arr.length;i++)
+            {
+                if(arr[i].checked)
+                {
+                    data=arr[i].data;
+                    document.getElementById("err2").innerHTML="";
+                    return true;
+                }
+            }
+            
+            document.getElementById("err3").innerHTML="select gender ...";
+            return false;   
+
+        }//gender validation ends 
+        function Validatecourse(coursearr){
+            str=""
+            
+            var cnt=0;
+            for(var i=0;i<coursearr.length;i++)
+            {
+                if(coursearr[i].checked)
+                {
+                    str+=coursearr[i].value;
+                    cnt++;
+                }
+            }
+            if(cnt>=3)
+            {
+                document.getElementById("err4").innerHTML="";
+                return true;
+            }
+            else{
+                document.getElementById("err4").innerHTML="select minimum 3 Courses";
+                return false;
+            }
+
+        }
+
+        function submit()
+        {
+            var name=document.getElementById("nm").value;
+            var arr=document.getElementsByName("Gender")
+            var coursearr=document.getElementsByName("courses")
+            var flag1=validateName(name);
+            var flag2=validateGender(arr);
+            var flag3=Validatecourse(coursearr);
+
+            if(flag1 && flag2 && flag3)
+            {
+                document.getElementById()
+            }
+
+            
+        }
+    </script>
+</head>
+<body>
+<div id="dv">
+   <table border="2">
+   
+    <tr>
+        <th>Name</th>
+        <td><input type="text" name="nm" id="nm"></td>
+        <td><span >*</span> <span id="err1"></span></td>
+    </tr>
+    <tr>
+        <th>Email Address</th>
+        <td><input type="text" name="email" id="email"></td>
+        <td><span >*</span> <span id="err2"></span></td>
+    </tr>
+    <tr>
+        <th>Gender</th>
+        <td>
+            Male<input type="radio" name="Gender" id="m" value="male">
+            Female <input type="radio" name="Gender" id="f" value="Female">
+        </td>
+        <td><span >*</span> <span id="err3"></span></td>
+    </tr>
+    <tr>
+        <th>Course</th>
+        <td><label for="java">Java</label> <input type="checkbox" name="courses" id="java" value="java"><br>
+            <label for="react">React</label> <input type="checkbox" name="courses" id="react" value="react"><br>
+            <label for="python">Python</label><input type="checkbox" name="courses" id="python" value="python"><br>
+        </td>
+        <td>
+            <span>*</span><span id="err4"></span>
+        </td>
+    </tr>
+   </table>
+   <button type="button" id="btn" onclick="submit()"> Register Me</button>
+
+   
+</div>
+</body>
+</html>
